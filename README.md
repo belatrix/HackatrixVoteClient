@@ -1,6 +1,6 @@
 # Hackatrix Vote Client
 
-This web application has been designed for the hackatrix event voting process, using:
+This web application has been designed for the hackatrix voting process, using:
 
 - [AngularJS] (https://angularjs.org/)
 - [Angular Material] (https://material.angularjs.org/)
