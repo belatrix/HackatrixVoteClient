@@ -82,7 +82,7 @@ sudo apt-get install ruby-full
 > Second install sass 
 
 ```bash
- udo su -c "gem install sass"
+sudo su -c "gem install sass"
 ```
 
 #Finally
