@@ -1,6 +1,6 @@
-# Hackatrix Voting Web App
+# Hackatrix Vote Client
 
-This is a web application designed for the voting process in the hackatrix event, using AngularJS, Angular Material, Grunt and Bower.
+This web application has been designed for the hackatrix event voting process, using AngularJS, Angular Material, Grunt and Bower.
 
 #Features
 
@@ -11,14 +11,14 @@ This is a web application designed for the voting process in the hackatrix event
 - Controlling your web apps development and distributions (zip packaging)
 - minifying css and js distribution automatically
 - Developing with live-reload (in port: 3000) - http://localhost:3000
-- Freddie task for to manage a server http with *.json mockups files [fixtures] and a scalable proxy reverse backend calls implementation - [https://www.npmjs.com/package/freddie]
+- Freddie tool for to manage a server http using *.json mockups [fixtures] and a scalable proxy reverse backend calls implementation - for more details visit [https://www.npmjs.com/package/freddie]
 - Sass for extend CSS language
 
 Based in swam project [https://github.com/techfano/swamMaterial]
 
 # Getting started
 
-it's easy to use, first you need to install the follow
+First you need to install following
 
 - Node.js https://nodejs.org/
 - Bower http://bower.io/ (npm install -g bower)
