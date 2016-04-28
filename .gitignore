@@ -1,8 +1,8 @@
 # Generated directories
 node_modules/
 bower_components/
-distro/
-export/
+.distro/
+.export/
 .sass-cache/
 source/css/lib/
 source/index.html
