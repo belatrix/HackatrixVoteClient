@@ -122,6 +122,6 @@ This command create the "distro" folder with the css and js minified, ziped proj
 
 this command is executed for activate the grunt tasks, for to import and order the bower dependencies, minifying css and js files, develop with live overload and other tasks in advance.
 
-Thanks I invite you to improve this document.
+Thanks help to improve this document.
 
 Estefano Castañeda.
