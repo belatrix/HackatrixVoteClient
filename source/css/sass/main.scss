@@ -111,9 +111,24 @@ md-content .article p{
 	}
 }
 
+md-list{
+	position: relative;
+	margin: 0 auto;
+	width: 50%;
+}
+
+md-list-item{
+	background: #FFF;
+	border-bottom: 1px dashed #CCC;
+}
+
 @media(max-width:1024px){
-	md-card{
+	md-list{
 		width:95%;
+	}
+
+	md-list-item{
+		width:100%;
 		cursor:pointer;
 	}
 
