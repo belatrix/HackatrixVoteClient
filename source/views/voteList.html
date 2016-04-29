@@ -1,13 +1,16 @@
 <md-progress-linear ng-show="loading" class="md-accent" md-mode="indeterminate"></md-progress-linear>
 <div layout="row" layout-wrap>
 
-<md-list>
-  <md-subheader class="md-no-sticky">Choose your favorite App</md-subheader>
-  <md-divider></md-divider>
-  <md-list-item ng-repeat="idea in ideas | orderBy:'pk'" ng-click="disabled">
-    <img alt="" src="https://cdn3.iconfinder.com/data/icons/business/16/star_sign-512.png" class="md-avatar" />
-    <p>{{ idea.name }}</p>
-  </md-list-item>
-</md-list>
-	
+  <section>
+    <md-subheader class="md-primary" layout="row" layout-align="center center">
+      Vote for your favorite App
+    </md-subheader>
+    <md-list>
+      <md-list-item ng-repeat="idea in ideas | orderBy:'pk'" ng-disabled="loading" ng-click="voteIdea(idea)">
+        <img alt="" src="https://cdn3.iconfinder.com/data/icons/business/16/star_sign-512.png" class="md-avatar" />
+        <p>{{ idea.name }}</p>
+      </md-list-item>
+    </md-list>
+  </section>
+
 </div>

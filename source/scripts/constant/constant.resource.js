@@ -16,6 +16,15 @@
        		}
        	},
 
+        results:{
+          url:'api/results/',
+          params:{
+          },
+          actions:{
+            'get':   {method:'GET', isArray:true}
+          }
+        },
+
         vote:{
           url:'api/idea/:pk/vote/',
           params:{

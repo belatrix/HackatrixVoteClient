@@ -4,6 +4,7 @@
 		'module.controller.leftSide',
 		'module.controller.header',
 		'module.controller.voteList',
+		'module.controller.voteResult',
 		'module.controller.thanksVote'
 	]);
 
