@@ -1,0 +1,17 @@
+<md-progress-linear ng-show="loading" class="md-accent" md-mode="indeterminate"></md-progress-linear>
+<div layout="row" layout-wrap>
+
+	<section>
+        <md-subheader class="md-primary" layout="row" layout-align="center center">
+      	  Current voting results
+        </md-subheader>
+		<md-list>
+		  <md-list-item ng-repeat="idea in results | orderBy:'-votes'" ng-disabled="loading" ng-click="voteIdea(idea)">
+		    <img alt="" src="https://cdn3.iconfinder.com/data/icons/business/16/star_sign-512.png" class="md-avatar" />
+		    <p>{{ idea.name }}</p>
+		    <span> {{idea.votes}} </span>
+		    <span>&nbsp;vote<span ng-show="idea.votes>1 || idea.votes==0">s</span></span>  
+		  </md-list-item>
+		</md-list>
+	</section>
+</div>
