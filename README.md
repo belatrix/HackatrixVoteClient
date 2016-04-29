@@ -1,6 +1,13 @@
 # Hackatrix Vote Client
 
-This web application has been designed for the hackatrix event voting process, using AngularJS, Angular Material, Grunt and Bower.
+This web application has been designed for the hackatrix voting process, using:
+
+- [AngularJS] (https://angularjs.org/)
+- [Angular Material] (https://material.angularjs.org/)
+- [Sass] (http://sass-lang.com/)
+- [Grunt] (http://gruntjs.com/)
+- [Bower] (http://bower.io/)
+- [NodeJS] (https://nodejs.org/)
 
 #Features
 
@@ -14,15 +21,71 @@ This web application has been designed for the hackatrix event voting process, u
 - Freddie tool for to manage a server http using *.json mockups [fixtures] and a scalable proxy reverse backend calls implementation - for more details visit [https://www.npmjs.com/package/freddie]
 - Sass for extend CSS language
 
-Based in swam project [https://github.com/techfano/swamMaterial]
+Based in [Swam] (https://github.com/techfano/swamMaterial) project
 
 # Getting started
 
 First you need to install following
 
-- Node.js https://nodejs.org/
-- Bower http://bower.io/ (npm install -g bower)
-- Grunt http://gruntjs.com/getting-started (npm install -g grunt grunt-cli)
+**Installing Node.js**
+
+**Windows**
+> You can download the .exe installer [here] (https://nodejs.org/en/download/) and follow the wizard to installation
+
+**Linux - Ubuntu/Debian**
+
+1- Open your terminal and execute the next commands
+```bash
+sudo apt-get update && sudo apt-get install git-core curl build-essential openssl libssl-dev
+```
+2- Then cloning the nodeJS repository in a desired location
+```bash
+git clone https://github.com/nodejs/node.git node && cd node
+```
+3- If you wish choose a version, but if you want to work with the latest skip this step
+```bash
+git checkout v4.4.3
+```
+4- Creating the makefile
+```bash
+./configure
+```
+5- Preparing the installation
+```bash
+make
+```
+6- Installing
+```bash
+sudo make install
+```
+
+**Installing Bower**
+```bash
+npm install -g bower
+```
+for more details visit [Bower website] (http://bower.io/)
+
+**Installing Grunt**
+```bash
+npm install -g grunt grunt-cli
+```
+for more details visit [Grunt website] (http://gruntjs.com/getting-started)
+
+**Installing Sass**
+
+> First Install Ruby
+
+```bash
+sudo apt-get install ruby-full
+```
+
+> Second install sass 
+
+```bash
+sudo su -c "gem install sass"
+```
+
+#Finally
 
 Enter with the console to the main project folder, example:
 
@@ -49,17 +112,16 @@ The command "grunt swam", create automatically the index.html into "source" fold
   - header.html
   - footer.html
 
-For production versioning, execute in the console the next command:
+For production packaging, compress only execute in the terminal the next command:
 
 <code>
-grunt packing
+grunt distro
 </code>
 
 This command create the "distro" folder with the css and js minified, ziped project into "distro/zip" folder and all the necesary (in advance).
 
-
 this command is executed for activate the grunt tasks, for to import and order the bower dependencies, minifying css and js files, develop with live overload and other tasks in advance.
 
-Thanks.
+Thanks help to improve this document.
 
 Estefano Castañeda.
