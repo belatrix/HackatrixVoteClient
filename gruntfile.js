@@ -172,6 +172,12 @@ module.exports = function(grunt) {
         cwd: 'source/svg/',
         src: '*.svg',
         dest: 'distro/svg/'
+      },
+      images: {
+        expand: true,
+        cwd: 'source/images/',
+        src: '*.*',
+        dest: 'distro/images/'
       }
     },
 
@@ -272,6 +278,7 @@ module.exports = function(grunt) {
     'concat:js',
     'copy:views',
     'copy:svg',
+    'copy:images',
     'uglify:distro',
     'cssmin:distro',
     'htmlbuild:distro',
