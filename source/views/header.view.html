@@ -1,17 +1,19 @@
 <md-toolbar md-scroll-shrink>
   <div class="md-toolbar-tools">
-    <!--md-button ng-click="toggleLeft()" class="md-icon-button" aria-label="Settings">
-      <md-icon md-svg-icon="menu"></md-icon>
-    </md-button-->
-    <md-button ng-show="state.is('article')" ng-click="goBack()" class="md-icon-button" aria-label="Settings">
-      <md-icon md-svg-icon="arrow_back"></md-icon>
-    </md-button>
-    <h1>
-      Hackatrix 2016 - Ideas Voting
+    <h1 class="mr-40">
+      Hackatrix 2016
     </h1>
-    <span flex></span>
+    <md-content flex ng-show="!state.is('thanksVote')">
+      <md-tabs class="md-default" md-dynamic-height>
+        <md-tab md-active="state.is('voteList')" label="Vote List" ui-sref="voteList">
+        </md-tab>
+        <md-tab md-active="state.is('voteResult')" label="Vote Result" ui-sref="voteResult">
+        </md-tab>
+      </md-tabs>
+    </md-content>
     <!--md-button class="md-icon-button" aria-label="Favorite">
       <md-icon md-svg-icon="favorite" style="color: greenyellow;"></md-icon>
     </md-button-->
   </div>
 </md-toolbar>
+

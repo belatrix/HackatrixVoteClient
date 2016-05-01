@@ -1,0 +1,38 @@
+<md-dialog aria-label="Mango (Fruit)"  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Detalle de la Idea</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-icon="close-light" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-card class="border-box-none">
+          <md-card-header>
+            <md-card-avatar>
+              <img alt="" class="md-user-avatar" src="images/idea-icon.png" />
+            </md-card-avatar>
+            <md-card-header-text>
+              <span class="md-title">{{detail.name}}</span>
+              <span class="md-subhead">{{detail.votes}}<span>&nbsp;vote<span ng-show="detail.votes>1 || detail.votes==0">s</span></span></span>
+            </md-card-header-text>
+          </md-card-header>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">{{detail.name}}</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content>
+            <p>
+              {{detail.description}}
+            </p>
+          </md-card-content>
+        </md-card>
+      </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>

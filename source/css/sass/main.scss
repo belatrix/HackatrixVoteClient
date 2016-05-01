@@ -1,5 +1,6 @@
 @import 'vars'; 
 @import 'voteList'; 
+@import 'helpers'; 
 
 * {
  font-family: Roboto, 'Helvetica Neue', sans-serif;
@@ -39,6 +40,10 @@ md-content .article{
 
 md-card md-content{
 	padding: 15px;
+}
+
+md-card.border-box-none{
+	box-shadow: none;
 }
 
 md-content .img-container{

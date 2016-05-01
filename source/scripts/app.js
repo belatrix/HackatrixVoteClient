@@ -79,6 +79,7 @@
                       .icon("caret_up", "svg/caret_up.svg", 24)
                       .icon("caret_down", "svg/caret_down.svg", 24)
                       .icon("search", "svg/search.svg", 24)
+                      .icon("close-light", "svg/close-light.svg", 24)
                       .icon("close", "svg/close.svg", 24);
 
                       $mdThemingProvider.theme('default')

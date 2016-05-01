@@ -7,6 +7,16 @@
 
         remoteURL: 'https://hackatrix-vote.herokuapp.com:443/',
 
+        idea:{
+          url:'api/idea/:pk',
+          params:{
+            pk:'@pk'
+          },
+          actions:{
+            'get':   {method:'GET', isArray:false}
+          }
+        },
+
         ideas:{
        		url:'api/ideas/',
        		params:{

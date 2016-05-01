@@ -3,15 +3,25 @@
 
 	<section>
         <md-subheader class="md-primary" layout="row" layout-align="center center">
-      	  Current voting results
+      	  Current voting results / <span> {{totalVotes}} votes </span>-<span> {{totalPercent}}%</span>
         </md-subheader>
 		<md-list>
-		  <md-list-item ng-repeat="idea in results | orderBy:'-votes'" ng-disabled="loading" ng-click="voteIdea(idea)">
-		    <img alt="" src="https://cdn3.iconfinder.com/data/icons/business/16/star_sign-512.png" class="md-avatar" />
-		    <p>{{ idea.name }}</p>
-		    <span> {{idea.votes}} </span>
-		    <span>&nbsp;vote<span ng-show="idea.votes>1 || idea.votes==0">s</span></span>  
-		  </md-list-item>
+			<div ng-repeat="idea in results | orderBy:'-votes'">
+				<md-list-item  ng-disabled="loading" ng-click="showDetails($event, idea)">
+				  	<img alt="" src="images/idea-icon.png" class="md-avatar" />
+				    <p>{{ idea.name }}</p>
+				    <span> {{idea.votes}} </span>
+				    <span>&nbsp;vote<span ng-show="idea.votes>1 || idea.votes==0">s</span></span>  
+				    <span>&nbsp;-&nbsp;{{idea.percent}} </span>
+				    <span>&nbsp;%</span>  
+				</md-list-item>
+				<md-progress-linear 
+					ng-class="{'md-warn': idea.percent<=10, 'md-accent': idea.percent>10 && idea.percent<=50}" 
+					md-mode="determinate" 
+					value="{{idea.percent}}">
+				</md-progress-linear>
+			</div>
 		</md-list>
+
 	</section>
 </div>
