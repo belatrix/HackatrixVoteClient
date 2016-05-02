@@ -158,7 +158,7 @@ module.exports = function(grunt) {
       views: {
         expand: true,
         cwd: 'source/views',
-        src: '*.html',
+        src: '**/*.html',
         dest: 'distro/views',
       },
       scripts: {
@@ -170,13 +170,13 @@ module.exports = function(grunt) {
       svg: {
         expand: true,
         cwd: 'source/svg/',
-        src: '*.svg',
+        src: '**/*.svg',
         dest: 'distro/svg/'
       },
       images: {
         expand: true,
         cwd: 'source/images/',
-        src: '*.*',
+        src: '**/*.*',
         dest: 'distro/images/'
       }
     },

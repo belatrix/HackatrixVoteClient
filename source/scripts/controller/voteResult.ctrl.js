@@ -17,40 +17,77 @@
       	'$resourceService',
         '$state',
         '$mdDialog', 
-        '$mdMedia'
+        '$mdMedia',
+        '$interval',
+        '$mdToast'
       ];
 
-    function controllerResult($scope, $resourceService, $state, $mdDialog, $mdMedia) {
+    function controllerResult($scope, $resourceService, $state, $mdDialog, $mdMedia, $interval, $mdToast) {
 
-      var results = $resourceService.request('results');
-      var idea = $resourceService.request('idea');
+      var getTotalVotes, getVoteResults, idea, intervalResult, last, results, resultsCopy, showSimpleToast;
+
+      results = $resourceService.request('results');
+      idea = $resourceService.request('idea');
+      resultsCopy = [];
 
       $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
       $scope.loading = true;
       $scope.totalVotes = 0;
       $scope.totalPercent = 0;
+      $scope.results = [];
 
-      results.get(function(data){
-        $scope.loading = false;
-
-        data.forEach(function(idea){
-          
-          $scope.totalVotes += idea.votes;
-        
-        });
+      getTotalVotes = function (data) {
+        var totalVotes = 0;
 
         data.forEach(function(idea){
           
-          idea.percent = (100 / ($scope.totalVotes / idea.votes));
-          $scope.totalPercent += idea.percent;
-          idea.percent = parseFloat(idea.percent).toFixed(2);
+          totalVotes += idea.votes;
         
         });
 
-        $scope.totalPercent = parseFloat($scope.totalPercent).toFixed(0);
-        $scope.results = data;
+        return totalVotes;
 
-      });
+      };
+
+      getVoteResults = function () {
+
+        results.get(function(data){
+          $scope.loading = false;
+          $scope.totalVotes = getTotalVotes(data);
+          $scope.totalPercent = 0;
+
+          data.forEach(function(idea){
+            idea.percent = 0;
+            idea.percent = (100 / ($scope.totalVotes / idea.votes));
+            $scope.totalPercent += idea.percent;
+            idea.percent = parseFloat(idea.percent).toFixed(2);
+          
+          });
+
+          $scope.totalPercent = parseFloat($scope.totalPercent).toFixed(0);
+
+          angular.copy($scope.results, resultsCopy);
+
+          if(!angular.equals(data, resultsCopy)){
+            
+
+            if($scope.results.length>0){
+
+              showSimpleToast();              
+
+            }
+  
+            angular.merge($scope.results, data);
+            
+          }
+
+        });
+
+      }; 
+
+      getVoteResults();
+
+      intervalResult = $interval(getVoteResults, 5000);
 
       $scope.showDetails = function(ev, ideaResult) {
         var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
@@ -79,10 +116,49 @@
         
       };
 
+      showSimpleToast = function() {
+        $mdToast.show(
+          $mdToast.simple()
+            .textContent('New casted votes')
+            .position($scope.getToastPosition())
+            .hideDelay(3000)
+        );
+      };
+
+      last = {
+        bottom: true,
+        top: false,
+        left: false,
+        right: true
+      };
+
+      $scope.toastPosition = angular.extend({},last);
+    
+      $scope.getToastPosition = function() {
+        sanitizePosition();
+        return Object.keys($scope.toastPosition)
+          .filter(function(pos) { return $scope.toastPosition[pos]; })
+          .join(' ');
+      };
+    
+      function sanitizePosition() {
+        var current = $scope.toastPosition;
+    
+        if ( current.bottom && last.top ) current.top = false;
+        if ( current.top && last.bottom ) current.bottom = false;
+        if ( current.right && last.left ) current.left = false;
+        if ( current.left && last.right ) current.right = false;
+        last = angular.extend({},current);
+      }
+
       $scope.$watch(function() {
         return $mdMedia('xs') || $mdMedia('sm');
       }, function(wantsFullScreen) {
         $scope.customFullscreen = (wantsFullScreen === true);
+      });
+
+      $scope.$on('$destroy', function(){
+         $interval.cancel(intervalResult);
       });
       
     }
