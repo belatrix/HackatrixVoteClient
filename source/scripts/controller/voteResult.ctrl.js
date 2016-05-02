@@ -97,7 +97,7 @@
           
           $mdDialog.show({
             controller: DialogController,
-            templateUrl: '/views/dialog/voteDetail.html',
+            templateUrl: 'views/dialog/voteDetail.html',
             parent: angular.element(document.body),
             targetEvent: ev,
             clickOutsideToClose:true,
