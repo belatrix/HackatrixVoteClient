@@ -9,14 +9,15 @@
           controller: "controller.thanksVote"
       });
     })
-    .controller('controller.thanksVote', controllerPost); 
+    .controller('controller.thanksVote', thanksVote); 
 
-      controllerPost.$inject=[
-      	'$scope'
+      thanksVote.$inject=[
+        '$scope',
+      	'$stateParams'
       ];
 
-    function controllerPost($scope) {
-      
+    function thanksVote($scope, $stateParams) {
+      console.log($stateParams);
     }
     
 })();

@@ -35,7 +35,7 @@
         $scope.loading = true;
         vote.post({pk: idea.pk}, function(){
           $scope.loading = false;
-          $state.go('thanksVote');
+          $state.go('thanksVote', {name: 'hola'});
         });
       };
       
