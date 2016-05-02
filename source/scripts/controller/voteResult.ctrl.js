@@ -24,7 +24,7 @@
 
     function controllerResult($scope, $resourceService, $state, $mdDialog, $mdMedia, $interval, $mdToast) {
 
-      var getTotalVotes, getVoteResults, idea, last, results, resultsCopy, showSimpleToast;
+      var getTotalVotes, getVoteResults, idea, intervalResult, last, results, resultsCopy, showSimpleToast;
 
       results = $resourceService.request('results');
       idea = $resourceService.request('idea');
@@ -73,10 +73,6 @@
 
             if($scope.results.length>0){
 
-              data.forEach(function(data){
-                
-              });
-
               showSimpleToast();              
 
             }
@@ -91,7 +87,7 @@
 
       getVoteResults();
 
-      $interval(getVoteResults, 5000);
+      intervalResult = $interval(getVoteResults, 5000);
 
       $scope.showDetails = function(ev, ideaResult) {
         var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
@@ -159,6 +155,10 @@
         return $mdMedia('xs') || $mdMedia('sm');
       }, function(wantsFullScreen) {
         $scope.customFullscreen = (wantsFullScreen === true);
+      });
+
+      $scope.$on('$destroy', function(){
+         $interval.cancel(intervalResult);
       });
       
     }
