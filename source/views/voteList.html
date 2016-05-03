@@ -6,7 +6,7 @@
     </md-subheader>
     <md-list>
       <md-list-item ng-repeat="idea in ideas | orderBy:'pk'" ng-disabled="loading" ng-click="voteIdea(idea)">
-        <img alt="" src="images/idea-icon.png" class="md-avatar" />
+        <img alt="" src="images/idea.png" class="md-avatar" />
         <p>{{ idea.name }}</p>
       </md-list-item>
     </md-list>

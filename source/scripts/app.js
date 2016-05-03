@@ -13,7 +13,7 @@
     ]);
 
 
-    app.config(function ($stateProvider, $urlRouterProvider,$httpProvider,$mdThemingProvider,$mdIconProvider, $resourceProvider) {
+    app.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $mdThemingProvider, $mdIconProvider, $resourceProvider) {
 
         $resourceProvider.defaults.stripTrailingSlashes = false;
 
@@ -82,9 +82,30 @@
                       .icon("close-light", "svg/close-light.svg", 24)
                       .icon("close", "svg/close.svg", 24);
 
-                      $mdThemingProvider.theme('default')
-                          .primaryPalette('blue')
-                          .accentPalette('orange');
+        $mdThemingProvider.theme('default').primaryPalette('orange')
+            .accentPalette('hackatrix-blue', {
+              'default': '50',
+              'hue-1': '100',
+              'hue-2': '200'
+            });
+
+        $mdThemingProvider.definePalette('hackatrix-blue', {
+          '50': '3098BE',
+          '100': '9BD5EB',
+          '200': 'C5E1EB',
+          '300': '63C3E6',
+          '400': 'A6D8EB',
+          '500': 'C4D9E0',
+          '600': '84D3F0',
+          '700': '3098BE',
+          '800': '3098BE',
+          '900': '3098BE',
+          'A100': '3098BE',
+          'A200': '3098BE',
+          'A400': '3098BE',
+          'A700': '3098BE',
+          'contrastDefaultColor': 'light',
+        });
         
     });
 

@@ -9,7 +9,7 @@
 		<md-list>
 			<div ng-repeat="idea in results | orderBy:'-votes'">
 					<md-list-item  ng-disabled="loading" ng-click="showDetails($event, idea)">
-				  	<img alt="" src="images/idea-icon.png" class="md-avatar" />
+				  	<img alt="" src="images/idea.png" class="md-avatar" />
 				    <p>{{ idea.name }}</p>
 				    <span> {{idea.votes}} </span>  
 				    <span>&nbsp;-&nbsp;{{idea.percent}} </span>
