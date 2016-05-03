@@ -3,7 +3,20 @@
       <img src="http://www.bohannon4middletown.com/wp-content/uploads/2015/11/thankyou-msg.png" class="md-card-image" alt="Washed Out">
       <md-card-title>
         <md-card-title-text>
-          <span class="md-headline">Thanks for your vote</span>
+          <span class="md-headline">You has voted for:</span>
+          <div class="md-dialog-content">
+            <md-card class="border-box-none">
+              <md-card-header>
+                <md-card-avatar>
+                  <img alt="" class="md-user-avatar" src="images/idea-icon.png" />
+                </md-card-avatar>
+                <md-card-header-text>
+                   <span class="md-title">{{detail.name}}</span>
+                  <span class="md-subhead">{{detail.votes}}</span>
+                </md-card-header-text>
+              </md-card-header>
+            </md-card>
+          </div>
         </md-card-title-text>
       </md-card-title>
       <md-card-actions layout="row" layout-align="end center">
@@ -13,3 +26,4 @@
       </md-card-actions>
     </md-card>
 </div>
+

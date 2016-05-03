@@ -19,7 +19,7 @@
         'serviceStorage'
       ];
 
-    function controllerPost($scope,$resourceService,$state) {
+    function controllerPost($scope, $resourceService, $state) {
 
       var ideas = $resourceService.request('ideas');
       var vote = $resourceService.request('vote');
@@ -35,7 +35,7 @@
         $scope.loading = true;
         vote.post({pk: idea.pk}, function(){
           $scope.loading = false;
-          $state.go('thanksVote');
+          $state.go('thanksVote', idea, {location: false, inherit: false});
         });
       };
       

@@ -4,19 +4,21 @@
     .config(function($stateProvider){
       $stateProvider.state('thanksVote', {
           parent: 'root',
-          url: "/thanksVote",
+          url: "/thanksVote/:pk/:name/:votes",
           templateUrl: "views/thanksVote.html",
           controller: "controller.thanksVote"
       });
     })
-    .controller('controller.thanksVote', controllerPost); 
+    .controller('controller.thanksVote', thanksVote); 
 
-      controllerPost.$inject=[
-      	'$scope'
+      thanksVote.$inject=[
+        '$scope',
+      	'$stateParams',
+        '$resourceService'
       ];
 
-    function controllerPost($scope) {
-      
+    function thanksVote($scope, $stateParams) {
+      $scope.detail = $stateParams;
     }
     
 })();
