@@ -2,12 +2,13 @@
 <div layout="row" layout-wrap>
 
 	<section>
-        <md-subheader class="md-primary" layout="row" layout-align="center center">
-      	  Current voting results / <span> {{totalVotes}} votes </span>-<span> {{totalPercent}}%</span>
+        <md-subheader layout="row" layout-align="center center">
+      	  	<div>Current voting results / <span flex> {{totalVotes}} votes </span>-<span> {{totalPercent}}%</span>
+      	  	</div>
         </md-subheader>
 		<md-list>
 			<div ng-repeat="idea in results | orderBy:'-votes'">
-				<md-list-item  ng-disabled="loading" ng-click="showDetails($event, idea)">
+					<md-list-item  ng-disabled="loading" ng-click="showDetails($event, idea)">
 				  	<img alt="" src="images/idea-icon.png" class="md-avatar" />
 				    <p>{{ idea.name }}</p>
 				    <span> {{idea.votes}} </span>  

@@ -5,7 +5,8 @@
 		'module.controller.header',
 		'module.controller.voteList',
 		'module.controller.voteResult',
-		'module.controller.thanksVote'
+		'module.controller.thanksVote',
+		'module.controller.voteDetail'
 	]);
 
 

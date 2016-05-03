@@ -1,9 +1,8 @@
 <md-progress-linear ng-show="loading" class="md-accent" md-mode="indeterminate"></md-progress-linear>
 <div layout="row" layout-wrap>
-
   <section>
-    <md-subheader class="md-primary" layout="row" layout-align="center center">
-      Vote for your favorite App
+    <md-subheader layout="row" layout-align="center center">
+      Choose your favorite App
     </md-subheader>
     <md-list>
       <md-list-item ng-repeat="idea in ideas | orderBy:'pk'" ng-disabled="loading" ng-click="voteIdea(idea)">
