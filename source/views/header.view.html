@@ -14,6 +14,30 @@
     <!--md-button class="md-icon-button" aria-label="Favorite">
       <md-icon md-svg-icon="favorite" style="color: greenyellow;"></md-icon>
     </md-button-->
+
+
+    <md-menu>
+      <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
+        <md-icon md-menu-origin md-svg-icon="more-vert"></md-icon>
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button ng-click="">
+            <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+            Vote List
+          </md-button>
+        </md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item>
+          <md-button ng-click="ctrl.checkVoicemail()">
+            <md-icon md-svg-icon="call:voicemail"></md-icon>
+            Vote Result
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+
+
   </div>
 </md-toolbar>
 

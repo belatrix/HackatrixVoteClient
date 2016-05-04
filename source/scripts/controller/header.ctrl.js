@@ -5,37 +5,17 @@
 
     controllerHeader.$inject=[
     	'$scope',
-    	'$mdSidenav',
-      '$mdUtil',
-      '$log',
-      '$state'
+      '$state',
+      '$mdDialog'
     ];
 
-    function controllerHeader($scope,$mdSidenav,$mdUtil,$log,$state) {
+    function controllerHeader($scope, $state, $mdDialog) {
       
-      
-      $scope.toggleLeft = buildToggler('left');
-      $scope.toggleRight = buildToggler('right');
-      $scope.state = $state;
-
-      $scope.goBack = function(){
-        $state.go('today');
+      $scope.openMenu = function($mdOpenMenu, ev) {
+        var originatorEv = ev;
+        $mdOpenMenu(ev);
       };
-
-      /**
-       * Build handler to open/close a SideNav; when animation finishes
-       * report completion in console
-       */
-      function buildToggler(navID) {
-        var debounceFn =  $mdUtil.debounce(function(){
-              $mdSidenav(navID)
-                .toggle()
-                .then(function () {
-                  $log.debug("toggle " + navID + " is done");
-                });
-            },300);
-        return debounceFn;
-      }
+     
     	
     }
     
