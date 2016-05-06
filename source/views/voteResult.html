@@ -8,11 +8,12 @@
         </md-subheader>
 		<md-list>
 			<div ng-repeat="idea in results | orderBy:'-votes'">
-				<md-list-item  ng-disabled="loading" ng-click="showDetails($event, idea)">
+				<md-list-item  ng-disabled="loading" ng-click="showDetails($event, idea)"-->
 				  	<img alt="" src="images/idea.png" class="md-avatar" />
 				    <p>{{ idea.name }}</p>
-				    <span> {{idea.votes}} </span>  
-				    <span>&nbsp;-&nbsp;{{idea.percent}} </span>
+				    <span> {{idea.votes}} &nbsp;</span>
+				    <md-icon md-svg-icon="favorite"></md-icon> 
+				    <span>&nbsp;/&nbsp;{{idea.percent}} </span>
 				    <span>&nbsp;%</span>  
 				</md-list-item>
 				<md-progress-linear 
