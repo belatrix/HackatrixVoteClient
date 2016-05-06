@@ -1,28 +1,27 @@
 <md-progress-linear ng-show="loading" class="md-accent" md-mode="indeterminate"></md-progress-linear>
-
-<md-card ng-hide="loading" class="border-box-none">
-  <md-card-header>
-    <md-card-avatar>
-      <img alt="" class="md-user-avatar" src="images/idea.png" />
-    </md-card-avatar>
-    <md-card-header-text>
-      <span class="md-title">{{detail.name}}</span>
-      <span class="md-subhead">{{detail.votes}} Votes</span>
-    </md-card-header-text>
-  </md-card-header>
-  <md-card-title>
-    <md-card-title-text>
-      <span class="md-headline">{{detail.name}}</span>
-    </md-card-title-text>
-  </md-card-title>
-  <md-card-content>
-    <p>
-      {{detail.description}}
-    </p>
-  </md-card-content>
-  <md-card-actions layout="row" layout-align="end center">
-    <md-button ui-sref="voteResult" class="md-fab md-primary" aria-label="Use Android">
-        <md-icon md-svg-icon="arrow_forward">
-      </md-button>
-  </md-card-actions>
-</md-card>
+  <md-card ng-hide="loading" class="border-box-none">
+    <md-card-header>
+      <md-card-avatar>
+        <img alt="" class="md-user-avatar" src="images/idea.png" />
+      </md-card-avatar>
+      <md-card-header-text>
+        <span class="md-title">{{detail.name}}</span>
+        <span class="md-subhead">{{detail.votes}} Votes</span>
+      </md-card-header-text>
+    </md-card-header>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{detail.name}}</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <p>
+        {{detail.description}}
+      </p>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button ui-sref="voteResult" class="md-fab md-primary" aria-label="Use Android">
+          <md-icon md-svg-icon="arrow_forward">
+        </md-button>
+    </md-card-actions>
+  </md-card>

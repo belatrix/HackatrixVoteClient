@@ -84,6 +84,7 @@
                       .icon("more-vert", "svg/ic_more_vert.svg", 24)
                       .icon("list", "svg/list.svg", 24)
                       .icon("chart", "svg/chart.svg", 24)
+                      .icon("favorite", "svg/favorite.svg", 24)
                       .icon("close", "svg/close.svg", 24);
 
         $mdThemingProvider.theme('default').primaryPalette('orange')

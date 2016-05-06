@@ -4,7 +4,7 @@
     .config(function($stateProvider){
       $stateProvider.state('voteDetail', {
           parent: 'root',
-          url: "/voteDetail/:pk/:name/:votes",
+          url: "/voteDetail/:pk",
           templateUrl: "views/voteDetail.html",
           controller: "controller.voteDetail"
       });

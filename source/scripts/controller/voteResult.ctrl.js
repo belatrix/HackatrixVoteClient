@@ -89,35 +89,8 @@
       intervalResult = $interval(getVoteResults, 2000);
 
       $scope.showDetails = function(ev, idea) {
-        $state.go('voteDetail', idea, {location: false, inherit: false});
+        $state.go('voteDetail', idea);
       };
-
-      /*$scope.showDetails = function(ev, ideaResult) {
-        var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
-        $scope.loading = true;
-        idea.get({pk: ideaResult.pk},function(detail){
-          $scope.loading = false;
-          
-          $mdDialog.show({
-            controller: DialogController,
-            templateUrl: 'views/dialog/voteDetail.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose:true,
-            fullscreen: useFullScreen,
-            locals: {
-             detail: detail
-           },
-          }).then(function(answer) {           
-          }, function() {
-            console.log('close');
-          });
-
-        }, function(error){
-          console.error(error);
-        });
-        
-      };*/
 
       showSimpleToast = function() {
         $mdToast.show(
