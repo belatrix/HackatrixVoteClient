@@ -110,12 +110,6 @@ md-content .article p{
 	position: relative;
 }
 
-@media(max-width:1280px){
-	#container{
-		width: 100%;
-	}
-}
-
 section{
 	width: 100%;
 }
@@ -134,7 +128,35 @@ md-list{
 
 md-list-item{
 	background: #FFF;
-	border-bottom: 1px dashed #CCC;
+	border-bottom: 1px solid #E6E6E6;
+}
+
+.font-right{
+	text-align: right !important;
+}
+
+.font-left{
+	text-align: left !important;
+}
+
+md-list-item.active a div{
+
+	color: #2196F3;
+
+}
+
+#menuTab{
+	display: block;
+}
+
+#menuDrop{
+	display: none;
+}
+
+@media(max-width:1280px){
+	#container{
+		width: 100%;
+	}
 }
 
 @media(max-width:1024px){
@@ -152,16 +174,21 @@ md-list-item{
 	}
 }
 
-.font-right{
-	text-align: right !important;
-}
+@media(max-width:450px){
+	md-list{
+		width:100%;
+	}
 
-.font-left{
-	text-align: left !important;
-}
+	#logoHackatrix{
+		position: relative;
+		left: 0px;
+	}
 
-md-list-item.active a div{
+	#menuTab{
+		display: none;
+	}
 
-	color: #2196F3;
-
+	#menuDrop{
+		display: block;
+	}
 }
